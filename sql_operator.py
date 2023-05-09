@@ -47,36 +47,36 @@ class SQLOperator:
     def table_item(self, name: str, dat: str, primary_key: bool = False, auto_increment: bool = False, foreign_key: bool = False,
                    unique: bool = False, reference_table: str = None, reference_var: str = None, not_null: bool = False, default: int = None):
         if primary_key:
-            PRIM = "PRIMARY KEY"
+            PRIM = " PRIMARY KEY"
         else:
             PRIM = ""
 
         if auto_increment:
-            AUTO = "AUTO_INCREMENT"
+            AUTO = " AUTO_INCREMENT"
         else:
             AUTO = ""
 
         if unique:
-            UNI = "UNIQUE"
+            UNI = " UNIQUE"
         else:
             UNI = ""
 
         if foreign_key:
-            FORE = f"FOREIGN KEY({name}) REFERENCES {reference_table}({reference_var}), "
+            FORE = f" FOREIGN KEY({name}) REFERENCES {reference_table}({reference_var}), "
         else:
             FORE = ""
 
         if not_null:
-            NOTN = "NOT NULL"
+            NOTN = " NOT NULL"
         else:
             NOTN = ""
 
         if default:
-            DEFA = f"DEFAULT {default}"
+            DEFA = f" DEFAULT {default}"
         else:
             DEFA = ""
 
-        CREATE_ITEM_QUERY = f"{name} {dat} {AUTO} {PRIM} {UNI} {NOTN} {DEFA}, "
+        CREATE_ITEM_QUERY = f"{name} {dat}{AUTO}{PRIM}{UNI}{NOTN}{DEFA}, "
 
         return (CREATE_ITEM_QUERY, FORE)
 
