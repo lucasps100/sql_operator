@@ -175,12 +175,12 @@ class SQLOperator:
         self.recent_df = df
         return df
 
-     def enter_df(self, table_name: str, df, vars_tup : tuple =  None):
-         if not vars_tup:
+    def enter_df(self, table_name: str, df, vars_tup : tuple =  None):
+        if not vars_tup:
             vars_tup = tuple(df.columns)
-         arr = np.array(df)
-         for i in range(len(arr)):
-             arr[i] = tuple(arr[i])
-         self.insert_into_table(table_name=table_name, vars_tup=vars_tup,*arr)
+        arr = np.array(df)
+        for i in range(len(arr)):
+            arr[i] = tuple(arr[i])
+        self.insert_into_table(table_name=table_name, vars_tup=vars_tup,*arr)
 
 
