@@ -80,7 +80,7 @@ class SQLOperator:
 
         return (CREATE_ITEM_QUERY, FORE)
 
-    def create_table(self, name: str, **args: tuple):
+    def create_table(self, name: str, *args: tuple):
         CREATE_TABLE_QUERY = f"CREATE TABLE {name} ("
         for arg in args:
             CREATE_TABLE_QUERY += arg[0]
