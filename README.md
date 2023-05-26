@@ -1,5 +1,5 @@
 # sql_operator
-A class for simplifying MySQL script with MySQL-Connector, Pandas, and NumPy.
+A high-level program for simplifying MySQL script with MySQL-Connector, Pandas, and NumPy.
 
 
 Connect to you your own MySQL root to create databases, create and alter tables, insert data into tables, and query tables without typing a line of SQL script.
